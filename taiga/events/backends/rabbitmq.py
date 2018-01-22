@@ -23,7 +23,7 @@ from urllib.parse import urlparse
 
 from . import base
 
-log = logging.getLogger("tagia.events")
+log = logging.getLogger("taiga.events")
 
 
 def _make_rabbitmq_connection(url):
