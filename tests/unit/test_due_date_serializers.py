@@ -16,6 +16,7 @@ from taiga.projects.due_dates.serializers import DueDateSerializerMixin
 ])
 def test_due_date_status(due_date, is_closed, expected):
     serializer = DueDateSerializerMixin()
-    obj = mock.MagicMock(due_date=due_date, is_closed=is_closed)
+    obj_status = mock.MagicMock(is_closed=is_closed)
+    obj = mock.MagicMock(due_date=due_date, status=obj_status)
     status = serializer.get_due_date_status(obj)
     assert status == expected
