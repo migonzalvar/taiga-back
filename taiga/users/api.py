@@ -344,7 +344,6 @@ class UsersViewSet(ModelCrudViewSet):
         }
         return response.Ok(response_data)
 
-
     @detail_route(methods=["GET"])
     def contacts(self, request, *args, **kwargs):
         user = get_object_or_404(models.User, **kwargs)
