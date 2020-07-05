@@ -330,7 +330,6 @@ class UsersViewSet(ModelCrudViewSet):
         user.cancel()
         return response.NoContent()
 
-
     @list_route(methods=["POST"])
     def export(self, request, pk=None):
         """
