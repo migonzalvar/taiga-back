@@ -46,7 +46,9 @@ class AttachmentSerializer(serializers.LightSerializer):
     preview_url = MethodField("get_preview_url")
 
     def get_url(self, obj):
-        return obj.attached_file.url
+        REFRESH_PARAM = "_taiga-refresh"
+        frag = "#{}={}:{}".format(REFRESH_PARAM, obj.content_type.name, obj.id)
+        return obj.attached_file.url + frag
 
     def get_thumbnail_card_url(self, obj):
         return services.get_card_image_thumbnail_url(obj)
